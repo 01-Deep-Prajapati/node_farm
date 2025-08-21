@@ -4,7 +4,7 @@ const fs = require("fs");
 const path = require("path");
 const repleceTemplete = require("./modules/repleceTemplete");
 
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 const app = express();
 
 // Load templates
