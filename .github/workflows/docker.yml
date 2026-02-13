@@ -18,8 +18,9 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build image
-        run: docker build -t dp117005/node-farm:latest .
-
-      - name: Push image
-        run: docker push dp117005/node-farm:latest
+      - name: Build and Push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: dp117005/node-farm:latest
